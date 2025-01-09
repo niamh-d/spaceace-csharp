@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cloqofq2nvy5c"]
+[gd_scene load_steps=7 format=3 uid="uid://cloqofq2nvy5c"]
 
 [ext_resource type="PackedScene" uid="uid://bskpcvncmtef7" path="res://Scenes/ShakeCam/ShakeCam.tscn" id="1_4mykw"]
 [ext_resource type="Script" path="res://Scenes/Level/Level.cs" id="1_q2oye"]
 [ext_resource type="PackedScene" uid="uid://cdy67g20x00kv" path="res://Scenes/LevelBg/LevelBg.tscn" id="2_wcgru"]
 [ext_resource type="PackedScene" uid="uid://b6b0yuijsxai1" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="3_cq5ir"]
 [ext_resource type="AudioStream" uid="uid://byiqhs42x1f8" path="res://assets/sounds/loops/Mercury.wav" id="6_0xv4h"]
-[ext_resource type="PackedScene" uid="uid://irulve8jp82r" path="res://Scenes/Bullets/PlayerBullet.tscn" id="7_dgiwp"]
-[ext_resource type="PackedScene" uid="uid://dltwgo7jxe13t" path="res://Scenes/Bullets/EnemyBomb.tscn" id="8_vg84l"]
-[ext_resource type="PackedScene" uid="uid://byis78delvlm4" path="res://Scenes/Bullets/EnemyBullet.tscn" id="9_0728q"]
 [ext_resource type="PackedScene" uid="uid://bc3ivisapki7c" path="res://Scenes/Player/Player.tscn" id="9_tq0dg"]
 
 [node name="Level" type="Node2D"]
@@ -27,13 +24,4 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("9_tq0dg")]
-position = Vector2(328, 388)
-
-[node name="PlayerBullet" parent="." instance=ExtResource("7_dgiwp")]
-position = Vector2(250, 201)
-
-[node name="EnemyBomb" parent="." instance=ExtResource("8_vg84l")]
-position = Vector2(376, 237)
-
-[node name="EnemyBullet" parent="." instance=ExtResource("9_0728q")]
-position = Vector2(425, 185)
+position = Vector2(359, 423)

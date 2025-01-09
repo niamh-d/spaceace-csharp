@@ -25,6 +25,15 @@ public partial class Player : Area2D
     {
         Vector2 desiredPos = GlobalPosition + GetInput() * _speed * (float)delta;
         GlobalPosition = desiredPos.Clamp(_upperLeft, _lowerRight);
+        if (Input.IsActionJustPressed("shoot"))
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        SignalManager.EmitOnCreateBullet(GlobalPosition, _bulletDirection, _bulletSpeed, (int)Defs.BulletType.Player);
     }
 
     private Vector2 GetInput()

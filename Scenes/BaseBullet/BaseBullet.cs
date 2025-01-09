@@ -2,13 +2,42 @@ using Godot;
 
 public partial class BaseBullet : HitBox
 {
-	// Called when the node enters the scene tree for the first time.
+
+	[Export] private VisibleOnScreenNotifier2D _visibleOnScreenNotifier2D;
+
+	private Vector2 _dir = Vector2.Up;
+	private float _speed = 50.0f;
+
 	public override void _Ready()
 	{
+		base._Ready();
+		_visibleOnScreenNotifier2D.ScreenExited += OnScreenExited;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		Position += _dir * _speed * (float)delta;
+	}
+
+	public void Setup(Vector2 direction, float speed)
+	{
+		_dir = direction;
+		_speed = speed;
+	}
+
+	public void BlowUp()
+	{
+		SetProcess(false);
+		QueueFree();
+	}
+
+	protected override void OnAreaEntered(Area2D area)
+	{
+		BlowUp();
+	}
+
+	private void OnScreenExited()
+	{
+		QueueFree();
 	}
 }

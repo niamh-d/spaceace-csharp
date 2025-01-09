@@ -67,6 +67,8 @@ radius = 13.0
 [node name="Player" type="Area2D" node_paths=PackedStringArray("_sprite2D", "_animationPlayer") groups=["player"]]
 collision_mask = 90
 script = ExtResource("1_q5e1x")
+_speed = 200.0
+_bulletSpeed = 280.0
 _sprite2D = NodePath("Sprite2D")
 _animationPlayer = NodePath("AnimationPlayer")
 

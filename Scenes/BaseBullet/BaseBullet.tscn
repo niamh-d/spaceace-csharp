@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://j57uaaweb83i" path="res://Scenes/OutOfTime/OutOfTime.tscn" id="2_jwydq"]
 [ext_resource type="Script" path="res://Scenes/BaseBullet/BaseBullet.cs" id="2_t7a5m"]
 
-[node name="BaseBullet" instance=ExtResource("1_6xe5i")]
+[node name="BaseBullet" node_paths=PackedStringArray("_visibleOnScreenNotifier2D") instance=ExtResource("1_6xe5i")]
 script = ExtResource("2_t7a5m")
+_visibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2"]
+scale = Vector2(0.3, 0.3)
 
 [node name="OutOfTime" parent="." index="3" instance=ExtResource("2_jwydq")]
 _lifeTime = 10.0
