@@ -1,9 +1,7 @@
 using Godot;
-using System;
 
 public partial class Player : Area2D
 {
-
     private const float MARGIN = 16.0f;
 
     [Export] private float _speed = 250.0f;
@@ -25,11 +23,28 @@ public partial class Player : Area2D
 
     public override void _Process(double delta)
     {
+        Vector2 desiredPos = GlobalPosition + GetInput() * _speed * (float)delta;
+        GlobalPosition = desiredPos.Clamp(_upperLeft, _lowerRight);
     }
 
     private Vector2 GetInput()
     {
-        Vector2 v = Vector2.Zero;
+        Vector2 v = new Vector2(
+            Input.GetAxis("left", "right"),
+            Input.GetAxis("up", "down")
+        );
+
+        if (v.X != 0)
+        {
+            _animationPlayer.Play("turn");
+            _sprite2D.FlipH = v.X > 0;
+        }
+        else
+        {
+            _animationPlayer.Play("fly");
+        }
+
+        // GD.Print($"v.x: {v.X}, v.y: {v.Y}, v.Length(): {v.Length()} v.Normalized(): {v.Normalized()}");
         return v.Normalized();
     }
 

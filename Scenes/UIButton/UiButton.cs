@@ -9,9 +9,4 @@ public partial class UiButton : TextureButton
 	{
 		_label.Text = _labelText;
 	}
-
-	public void SetText(string text)
-	{
-		_label.Text = text;
-	}
 }
