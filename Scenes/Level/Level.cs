@@ -12,6 +12,7 @@ public partial class Level : Node2D
         {
                 if (Input.IsActionJustPressed("test"))
                 {
+                        SignalManager.EmitOnCreateRandomPowerUp(new Vector2(200, 200));
                 }
                 if (Input.IsActionJustPressed("quit"))
                 {
