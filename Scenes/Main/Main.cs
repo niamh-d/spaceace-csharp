@@ -1,11 +1,14 @@
 using Godot;
-using System;
 
 public partial class Main : Control
 {
-	// Called when the node enters the scene tree for the first time.
+	[Export] private UiButton _playBtn;
+	[Export] private UiButton _quitBtn;
+
 	public override void _Ready()
-	{        
-        GetTree().Paused = false;
+	{
+		GetTree().Paused = false;
+		_quitBtn.Pressed += () => { GetTree().Quit(); };
+		_playBtn.Pressed += () => { GameManager.LoadGameScene(); };
 	}
 }

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://5nnag0wbs4y0"]
+
+[ext_resource type="Texture2D" uid="uid://bxucwo04melf1" path="res://assets/ui/blue_button00.png" id="1_iuarr"]
+[ext_resource type="Script" path="res://Scenes/UIButton/UiButton.cs" id="1_v2jgq"]
+[ext_resource type="Texture2D" uid="uid://di5adn4dusq5g" path="res://assets/ui/green_button00.png" id="2_ynbmd"]
+[ext_resource type="LabelSettings" uid="uid://bslymv1e3rjua" path="res://assets/GN_32_white.tres" id="4_pwe1v"]
+
+[node name="UIButton" type="TextureButton" node_paths=PackedStringArray("_label")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_iuarr")
+texture_pressed = ExtResource("2_ynbmd")
+script = ExtResource("1_v2jgq")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Text"
+label_settings = ExtResource("4_pwe1v")
+horizontal_alignment = 1
+vertical_alignment = 1
