@@ -25,13 +25,7 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("9_tq0dg")]
-position = Vector2(353, 55)
-
-[node name="EnemyBullet" parent="." instance=ExtResource("7_14v3p")]
-position = Vector2(351, 376)
-
-[node name="EnemyBullet2" parent="." instance=ExtResource("7_14v3p")]
-position = Vector2(428, 448)
+position = Vector2(176, 271)
 
 [node name="EnemyBullet3" parent="." instance=ExtResource("7_14v3p")]
-position = Vector2(307, 452)
+position = Vector2(171, 462)

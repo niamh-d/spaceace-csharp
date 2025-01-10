@@ -1,6 +1,4 @@
 using Godot;
-using System;
-
 public partial class Level : Node2D
 {
         public override void _Ready()
@@ -12,7 +10,7 @@ public partial class Level : Node2D
         {
                 if (Input.IsActionJustPressed("test"))
                 {
-                        SignalManager.EmitOnCreateRandomPowerUp(new Vector2(200, 200));
+                        SignalManager.EmitOnCreatePowerUp(new Vector2(100, 100), (int)Defs.PowerUpType.Shield);
                 }
                 if (Input.IsActionJustPressed("quit"))
                 {
