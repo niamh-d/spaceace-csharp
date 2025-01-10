@@ -1,4 +1,3 @@
-using System;
 using Godot;
 public partial class EnemyBase : PathFollow2D
 {

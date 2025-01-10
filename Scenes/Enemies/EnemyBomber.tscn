@@ -116,6 +116,9 @@ _shoots = true
 _aimsAtPlayer = true
 _bulletType = 2
 
+[node name="HitBox" parent="." index="0"]
+_damage = 30
+
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_yvyve")
@@ -142,6 +145,5 @@ offset_top = -34.0
 offset_right = 20.0
 offset_bottom = -32.0
 value = 75.0
-StartHealth = 25
 
 [editable path="HitBox"]

@@ -67,12 +67,18 @@ public partial class Player : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
+        if (area is HitBox)
+        {
+            var hitBox = area as HitBox;
+            SignalManager.EmitOnPlayerHit(hitBox.GetDamage());
+        }
+
         if (area is PowerUp)
         {
             var powerUp = area as PowerUp;
             if (powerUp.GetPowerUpType() == Defs.PowerUpType.Health)
             {
-                // health boost
+                SignalManager.EmitOnPlayerHealthBonus(_healthBoost);
             }
             else if (powerUp.GetPowerUpType() == Defs.PowerUpType.Shield)
             {

@@ -18,6 +18,7 @@ _booms = NodePath("Booms")
 [node name="HitBox" parent="." instance=ExtResource("2_3h10i")]
 collision_layer = 2
 collision_mask = 4
+_damage = 15
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 flip_v = true
