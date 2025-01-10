@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyWaves" load_steps=5 format=3 uid="uid://u4xyp2d0ge8o"]
+
+[ext_resource type="Script" path="res://Resources/EnemyWaves.cs" id="1_57k1j"]
+[ext_resource type="Resource" uid="uid://t7marrfauoo" path="res://Resources/Wave1.tres" id="1_xpgr6"]
+[ext_resource type="Resource" uid="uid://c1mapwxs3asqm" path="res://Resources/Wave2.tres" id="2_ofqnr"]
+[ext_resource type="Resource" uid="uid://c0k70kaq4i421" path="res://Resources/Wave3.tres" id="3_10ixd"]
+
+[resource]
+script = ExtResource("1_57k1j")
+_waves = [ExtResource("1_xpgr6"), ExtResource("2_ofqnr"), ExtResource("3_10ixd"), ExtResource("2_ofqnr"), ExtResource("1_xpgr6"), ExtResource("1_xpgr6")]

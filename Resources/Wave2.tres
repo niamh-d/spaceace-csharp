@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyWave" load_steps=2 format=3 uid="uid://c1mapwxs3asqm"]
+
+[ext_resource type="Script" path="res://Resources/EnemyWave.cs" id="1_hiwum"]
+
+[resource]
+script = ExtResource("1_hiwum")
+Speed = 0.0
+Gap = 0.0
+NumberOfEnemies = 0
