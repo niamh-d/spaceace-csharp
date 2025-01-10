@@ -8,6 +8,7 @@ public partial class EnemyBase : PathFollow2D
 	[Export] private AnimatedSprite2D _animatedSprite2D;
 	[Export] private Area2D _hitBox;
 	[Export] private HealthBar _healthBar;
+	[Export] private Node2D _booms;
 
 	[Export] private bool _shoots { get; set; } = false;
 	[Export] private bool _aimsAtPlayer { get; set; } = false;
@@ -18,8 +19,10 @@ public partial class EnemyBase : PathFollow2D
 	[Export] private float _bulletWaitTimeVar { get; set; } = 0.05f;
 	[Export] private float _speed = 50.0f;
 	[Export] float _powerUpChance = 0.8f;
+	[Export] public int _killMeScore { get; set; } = 10;
 
 	private Player _playerRef;
+	private bool _dead = false;
 
 	public override void _Ready()
 	{
@@ -53,10 +56,30 @@ public partial class EnemyBase : PathFollow2D
 		}
 	}
 
+	private void MakeBooms()
+	{
+		foreach (Node2D b in _booms.GetChildren())
+		{
+			SignalManager.EmitOnCreateExplosion(b.GlobalPosition, (int)Defs.ExplosionType.Boom);
+		}
+	}
+
+	private void DieCleanup()
+	{
+		_healthBar.OnDied -= HealthBarOnDied;
+		_dead = true;
+		SetProcess(false);
+		MakeBooms();
+		CreatePowerUp();
+		ScoreManager.IncrementScore(_killMeScore);
+		CallDeferred(MethodName.QueueFree);
+	}
+
 	private void HealthBarOnDied()
 	{
-		QueueFree();
-		CreatePowerUp();
+		if (_dead)
+			return;
+		DieCleanup();
 	}
 
 	public override void _Process(double delta)
