@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cxurcwh17twg7" path="res://Scenes/HitBox/HitBox.tscn" id="2_3h10i"]
 [ext_resource type="PackedScene" uid="uid://bk0ewdh5afuhp" path="res://Scenes/HealthBar/HealthBar.tscn" id="4_gufb2"]
 
-[node name="EnemyBase" type="PathFollow2D" node_paths=PackedStringArray("_laserTimer", "_sound", "_animatedSprite2D")]
+[node name="EnemyBase" type="PathFollow2D" node_paths=PackedStringArray("_laserTimer", "_sound", "_animatedSprite2D", "_hitBox", "_healthBar")]
 rotates = false
 script = ExtResource("1_84kbi")
 _laserTimer = NodePath("LaserTimer")
 _sound = NodePath("Sound")
 _animatedSprite2D = NodePath("AnimatedSprite2D")
+_hitBox = NodePath("HitBox")
+_healthBar = NodePath("HealthBar")
 
 [node name="HitBox" parent="." instance=ExtResource("2_3h10i")]
 collision_layer = 2

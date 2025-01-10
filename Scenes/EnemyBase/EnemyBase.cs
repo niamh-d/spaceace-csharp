@@ -1,9 +1,13 @@
+using System;
 using Godot;
 public partial class EnemyBase : PathFollow2D
 {
+
 	[Export] private Timer _laserTimer;
 	[Export] private AudioStreamPlayer2D _sound;
 	[Export] private AnimatedSprite2D _animatedSprite2D;
+	[Export] private Area2D _hitBox;
+	[Export] private HealthBar _healthBar;
 
 	[Export] private bool _shoots { get; set; } = false;
 	[Export] private bool _aimsAtPlayer { get; set; } = false;
@@ -25,8 +29,24 @@ public partial class EnemyBase : PathFollow2D
 			return;
 		}
 		_laserTimer.Timeout += LaserTimerTimeout;
+		_healthBar.OnDied += HealthBarOnDied;
+		_hitBox.AreaEntered += HitBoxOnAreaEntered;
+
 		SpaceUtils.PlayRandomAnimation(_animatedSprite2D);
 		StartShootTimer();
+	}
+
+	private void HitBoxOnAreaEntered(Area2D area)
+	{
+		if (area is BaseBullet)
+		{
+			_healthBar.TakeDamage((area as BaseBullet).GetDamage());
+		}
+	}
+
+	private void HealthBarOnDied()
+	{
+		QueueFree();
 	}
 
 	public override void _Process(double delta)
