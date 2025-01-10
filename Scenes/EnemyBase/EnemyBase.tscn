@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bflulf4cu4jip"]
+
+[ext_resource type="Script" path="res://Scenes/EnemyBase/EnemyBase.cs" id="1_84kbi"]
+[ext_resource type="PackedScene" uid="uid://j57uaaweb83i" path="res://Scenes/OutOfTime/OutOfTime.tscn" id="1_t07h0"]
+[ext_resource type="PackedScene" uid="uid://cxurcwh17twg7" path="res://Scenes/HitBox/HitBox.tscn" id="2_3h10i"]
+
+[node name="EnemyBase" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_84kbi")
+
+[node name="HitBox" parent="." instance=ExtResource("2_3h10i")]
+collision_layer = 2
+collision_mask = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+flip_v = true
+
+[node name="OutOfTime" parent="." instance=ExtResource("1_t07h0")]
+
+[node name="LaserTimer" type="Timer" parent="."]
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Booms" type="Node2D" parent="."]
