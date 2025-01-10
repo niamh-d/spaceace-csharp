@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://j57uaaweb83i" path="res://Scenes/OutOfTime/OutOfTime.tscn" id="1_t07h0"]
 [ext_resource type="PackedScene" uid="uid://cxurcwh17twg7" path="res://Scenes/HitBox/HitBox.tscn" id="2_3h10i"]
 
-[node name="EnemyBase" type="PathFollow2D"]
+[node name="EnemyBase" type="PathFollow2D" node_paths=PackedStringArray("_laserTimer", "_sound", "_animatedSprite2D")]
 rotates = false
 script = ExtResource("1_84kbi")
+_laserTimer = NodePath("LaserTimer")
+_sound = NodePath("Sound")
+_animatedSprite2D = NodePath("AnimatedSprite2D")
 
 [node name="HitBox" parent="." instance=ExtResource("2_3h10i")]
 collision_layer = 2
@@ -18,6 +21,7 @@ flip_v = true
 [node name="OutOfTime" parent="." instance=ExtResource("1_t07h0")]
 
 [node name="LaserTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 

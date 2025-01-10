@@ -6,6 +6,8 @@ public partial class ObjectMaker : Node2D
     private PackedScene _playerBulletScene = GD.Load<PackedScene>("res://Scenes/Bullets/PlayerBullet.tscn");
     private PackedScene _powerUpScene = GD.Load<PackedScene>("res://Scenes/PowerUp/PowerUp.tscn");
     private PackedScene _explosionScene = GD.Load<PackedScene>("res://Scenes/Explosion/Explosion.tscn");
+    private PackedScene _enemyBulletScene = GD.Load<PackedScene>("res://Scenes/Bullets/EnemyBullet.tscn");
+    private PackedScene _enemyBombScene = GD.Load<PackedScene>("res://Scenes/Bullets/EnemyBomb.tscn");
 
     public override void _Ready()
     {
@@ -31,8 +33,12 @@ public partial class ObjectMaker : Node2D
 
         switch (bulletType)
         {
+            case Defs.BulletType.Enemy:
+                return _enemyBulletScene;
             case Defs.BulletType.Player:
                 return _playerBulletScene;
+            case Defs.BulletType.EnemyBomb:
+                return _enemyBombScene;
             default:
                 return _playerBulletScene;
         }

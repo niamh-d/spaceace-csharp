@@ -112,6 +112,9 @@ animations = [{
 }]
 
 [node name="EnemyBomber" instance=ExtResource("1_ohow7")]
+_shoots = true
+_aimsAtPlayer = true
+_bulletType = 2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(0, 4)

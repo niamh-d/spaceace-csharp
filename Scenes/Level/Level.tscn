@@ -45,7 +45,7 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("9_tq0dg")]
-position = Vector2(176, 271)
+position = Vector2(279, 404)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(96.3469, -65.1818)

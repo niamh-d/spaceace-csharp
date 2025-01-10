@@ -146,6 +146,7 @@ animations = [{
 }]
 
 [node name="EnemyBio" instance=ExtResource("1_otffg")]
+_shoots = true
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(0, 7)
