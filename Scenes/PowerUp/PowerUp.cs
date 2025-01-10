@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
 public partial class PowerUp : HitBox
@@ -10,7 +9,7 @@ public partial class PowerUp : HitBox
         { Defs.PowerUpType.Shield, GD.Load<Texture2D>("res://assets/misc/shield_gold.png") }
     };
 
-    [Export] float _speed = 100;
+    [Export] float _speed = 100f;
     [Export] private Sprite2D _sprite;
     [Export] private AudioStreamPlayer2D _sound;
 
@@ -30,7 +29,6 @@ public partial class PowerUp : HitBox
 
     protected override void OnAreaEntered(Area2D area)
     {
-        GD.Print("PowerUp collected");
         QueueFree();
     }
 

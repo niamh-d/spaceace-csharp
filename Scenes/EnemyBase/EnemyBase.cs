@@ -17,6 +17,7 @@ public partial class EnemyBase : PathFollow2D
 	[Export] private float _bulletWaitTime { get; set; } = 2.0f;
 	[Export] private float _bulletWaitTimeVar { get; set; } = 0.05f;
 	[Export] private float _speed = 50.0f;
+	[Export] float _powerUpChance = 0.8f;
 
 	private Player _playerRef;
 
@@ -44,9 +45,18 @@ public partial class EnemyBase : PathFollow2D
 		}
 	}
 
+	private void CreatePowerUp()
+	{
+		if (GD.Randf() < _powerUpChance)
+		{
+			SignalManager.EmitOnCreateRandomPowerUp(GlobalPosition);
+		}
+	}
+
 	private void HealthBarOnDied()
 	{
 		QueueFree();
+		CreatePowerUp();
 	}
 
 	public override void _Process(double delta)
