@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc3ivisapki7c"]
+[gd_scene load_steps=9 format=3 uid="uid://bc3ivisapki7c"]
 
 [ext_resource type="Texture2D" uid="uid://nfslc3x0frjc" path="res://assets/ships/ships_human_1.png" id="1_6mddq"]
 [ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_q5e1x"]
+[ext_resource type="PackedScene" uid="uid://b8p0a6veg46di" path="res://Scenes/Shield/Shield.tscn" id="3_pq0pk"]
 
 [sub_resource type="Animation" id="Animation_j64ny"]
 length = 0.001
@@ -84,3 +85,5 @@ autoplay = "fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_34tlh")
+
+[node name="Shield" parent="." instance=ExtResource("3_pq0pk")]
