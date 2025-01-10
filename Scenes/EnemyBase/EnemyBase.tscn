@@ -14,6 +14,7 @@ _animatedSprite2D = NodePath("AnimatedSprite2D")
 _hitBox = NodePath("HitBox")
 _healthBar = NodePath("HealthBar")
 _booms = NodePath("Booms")
+_powerUpChance = 0.6
 
 [node name="HitBox" parent="." instance=ExtResource("2_3h10i")]
 collision_layer = 2
