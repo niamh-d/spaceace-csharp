@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyWave" load_steps=2 format=3 uid="uid://c0k70kaq4i421"]
+[gd_resource type="Resource" script_class="EnemyWave" load_steps=3 format=3 uid="uid://c0k70kaq4i421"]
 
+[ext_resource type="PackedScene" uid="uid://bmertj5iqmg8w" path="res://Scenes/Enemies/EnemyBomber.tscn" id="1_0mpwd"]
 [ext_resource type="Script" path="res://Resources/EnemyWave.cs" id="1_yuu1m"]
 
 [resource]
 script = ExtResource("1_yuu1m")
-Speed = 0.0
-Gap = 0.0
-NumberOfEnemies = 0
+EnemyScene = ExtResource("1_0mpwd")
+Speed = 80.0
+Gap = 2.0
+NumberOfEnemies = 4

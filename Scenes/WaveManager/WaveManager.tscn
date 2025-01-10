@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6a0i1gddxk64"]
+
+[ext_resource type="Script" path="res://Scenes/WaveManager/WaveManager.cs" id="1_srtb1"]
+[ext_resource type="Resource" uid="uid://u4xyp2d0ge8o" path="res://Resources/Waves.tres" id="2_nkwy8"]
+
+[sub_resource type="Curve2D" id="Curve2D_5yojs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 59, -69, 0, 0, 0, 0, 68, 559)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_f18f2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 621, -43, 0, 0, 0, 0, 534, 517)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_je1ci"]
+_data = {
+"points": PackedVector2Array(-7.19211, -154.354, 7.19211, 154.354, 753, 99, 0, 0, 0, 0, -64, 159)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_goydb"]
+_data = {
+"points": PackedVector2Array(34.8541, 89.6247, -34.8541, -89.6247, 748, 248, 0, 0, 0, 0, -104, 340)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pbun4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -132, 259, -133.331, -13.831, 133.331, 13.831, 140, 82, -137.757, 17.1504, 137.757, -17.1504, 266, 336, 2.76619, 88.5182, -2.76619, -88.5182, 754, 316)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_q0wkj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 707, 35, 0, 0, 0, 0, 442, 44, 0, 0, 0, 0, 434, 415, 0, 0, 0, 0, 133, 243, 0, 0, 0, 0, -126, 284)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_yq5tc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 367, -58, -24.8958, -61.9628, 24.8958, 61.9628, 500, 209, 57.5368, -25.449, -57.5368, 25.449, 249, 451, 0, 0, 0, 0, -48, 428)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_2hpat"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 219, -37, 0, 0, 0, 0, 301, 211, 0, 0, 0, 0, 487, 377, 0, 0, 0, 0, 727, 399)
+}
+point_count = 4
+
+[node name="WaveManager" type="Node2D" node_paths=PackedStringArray("_pathsContainer", "_spawnTimer")]
+script = ExtResource("1_srtb1")
+_enemyWavesResource = ExtResource("2_nkwy8")
+_pathsContainer = NodePath("Paths")
+_spawnTimer = NodePath("SpawnTimer")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_5yojs")
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_f18f2")
+
+[node name="Path2D3" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_je1ci")
+
+[node name="Path2D4" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_goydb")
+
+[node name="Path2D5" type="Path2D" parent="Paths"]
+position = Vector2(-2, 6)
+curve = SubResource("Curve2D_pbun4")
+
+[node name="Path2D6" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_q0wkj")
+
+[node name="Path2D7" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_yq5tc")
+
+[node name="Path2D8" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_2hpat")
