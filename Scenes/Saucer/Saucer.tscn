@@ -34,24 +34,6 @@ states/spin/node = SubResource("AnimationNodeAnimation_jdeq8")
 states/spin/position = Vector2(359, 99.75)
 transitions = ["shoot", "spin", SubResource("AnimationNodeStateMachineTransition_anhup"), "Start", "spin", SubResource("AnimationNodeStateMachineTransition_pe7vb")]
 
-[sub_resource type="Animation" id="Animation_kxqgb"]
-resource_name = "spin"
-length = 5.0
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_2k22e"]
 length = 0.001
 tracks/0/type = "value"
@@ -91,6 +73,37 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_a5k8p"]
+resource_name = "die"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.152941, 0.133333, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_8ao35"]
 resource_name = "shoot"
 length = 2.8
@@ -125,35 +138,22 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_a5k8p"]
-resource_name = "die"
-length = 1.4
-step = 0.2
+[sub_resource type="Animation" id="Animation_kxqgb"]
+resource_name = "spin"
+length = 5.0
+loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.152941, 0.133333, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lc07m"]
@@ -212,10 +212,10 @@ offset_left = -32.0
 offset_top = -44.0
 offset_right = 32.0
 offset_bottom = -40.0
-LevelLow = 100
-LevelMed = 200
-StartHealth = 400
-MaxHealth = 400
+LevelLow = 75
+LevelMed = 150
+StartHealth = 300
+MaxHealth = 300
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 deterministic = false
