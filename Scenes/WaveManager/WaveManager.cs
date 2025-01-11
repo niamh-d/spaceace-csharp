@@ -36,6 +36,16 @@ public partial class WaveManager : Node2D
 		return newEnemy;
 	}
 
+	private void UpdateSpeeds()
+	{
+		if (_enemyWavesResource.WaveIsStart(_waveCount))
+		{
+			_speedFactor *= 1.05f;
+			_waveGap *= 0.95f;
+			GD.Print($"update_speeds(): _wave_count: {_waveCount}, _speed_factor: {_speedFactor}, _wave_gap: {_waveGap}");
+		}
+	}
+
 	private void StartSpawnTimer()
 	{
 		_spawnTimer.WaitTime = _waveGap;
@@ -59,6 +69,7 @@ public partial class WaveManager : Node2D
 
 		GD.Print($"wave() {_waveCount} spawned, waiting {wave.Gap}");
 		_waveCount++;
+		UpdateSpeeds();
 		StartSpawnTimer();
 	}
 

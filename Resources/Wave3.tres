@@ -8,4 +8,4 @@ script = ExtResource("1_yuu1m")
 EnemyScene = ExtResource("1_0mpwd")
 Speed = 80.0
 Gap = 2.0
-NumberOfEnemies = 4
+NumberOfEnemies = 2

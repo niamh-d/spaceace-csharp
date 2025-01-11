@@ -7,4 +7,4 @@
 
 [resource]
 script = ExtResource("1_57k1j")
-_waves = [ExtResource("1_xpgr6"), ExtResource("2_ofqnr"), ExtResource("3_10ixd"), ExtResource("2_ofqnr"), ExtResource("1_xpgr6"), ExtResource("1_xpgr6")]
+_waves = [ExtResource("1_xpgr6"), ExtResource("2_ofqnr"), ExtResource("3_10ixd"), ExtResource("2_ofqnr")]

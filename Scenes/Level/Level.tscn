@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cloqofq2nvy5c"]
+[gd_scene load_steps=11 format=3 uid="uid://cloqofq2nvy5c"]
 
 [ext_resource type="PackedScene" uid="uid://bskpcvncmtef7" path="res://Scenes/ShakeCam/ShakeCam.tscn" id="1_4mykw"]
 [ext_resource type="Script" path="res://Scenes/Level/Level.cs" id="1_q2oye"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://byiqhs42x1f8" path="res://assets/sounds/loops/Mercury.wav" id="6_0xv4h"]
 [ext_resource type="PackedScene" uid="uid://cjfuvug0mt4hk" path="res://Scenes/GameUI/GameUi.tscn" id="6_u4g6t"]
 [ext_resource type="PackedScene" uid="uid://c0gblj8kbbaka" path="res://Scenes/GameOver/GameOver.tscn" id="7_2wo1c"]
+[ext_resource type="PackedScene" uid="uid://b6a0i1gddxk64" path="res://Scenes/WaveManager/WaveManager.tscn" id="9_mqf41"]
 [ext_resource type="PackedScene" uid="uid://bc3ivisapki7c" path="res://Scenes/Player/Player.tscn" id="9_tq0dg"]
 [ext_resource type="PackedScene" uid="uid://cnotmxptsn056" path="res://Scenes/SaucerManager/SaucerManager.tscn" id="9_txubq"]
 
@@ -32,5 +33,7 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("9_tq0dg")]
 position = Vector2(279, 404)
+
+[node name="WaveManager" parent="." instance=ExtResource("9_mqf41")]
 
 [node name="SaucerManager" parent="." instance=ExtResource("9_txubq")]
