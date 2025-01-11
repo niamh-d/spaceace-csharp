@@ -5,6 +5,7 @@ public partial class HomingMissile : HitBox
 {
 	[Export] private float _rotationSpeed = 1.2f;
 	[Export] private float _speed = 40.0f;
+	[Export] private int _score = 5;
 
 	private Player _playerRef;
 
@@ -33,5 +34,18 @@ public partial class HomingMissile : HitBox
 
 		Rotate(Mathf.Sign(atp) * angleWeWillTurn);
 		Position += Transform.X * _speed * delta;
+	}
+
+	private void BlowUp()
+	{
+		SignalManager.EmitOnCreateExplosion(GlobalPosition, (int)Defs.ExplosionType.Boom);
+		ScoreManager.IncrementScore(_score);
+		SetProcess(false);
+		QueueFree();
+	}
+
+	protected override void OnAreaEntered(Area2D area)
+	{
+		BlowUp();
 	}
 }

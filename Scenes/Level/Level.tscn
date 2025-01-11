@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cloqofq2nvy5c"]
+[gd_scene load_steps=10 format=3 uid="uid://cloqofq2nvy5c"]
 
 [ext_resource type="PackedScene" uid="uid://bskpcvncmtef7" path="res://Scenes/ShakeCam/ShakeCam.tscn" id="1_4mykw"]
 [ext_resource type="Script" path="res://Scenes/Level/Level.cs" id="1_q2oye"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c0gblj8kbbaka" path="res://Scenes/GameOver/GameOver.tscn" id="7_2wo1c"]
 [ext_resource type="PackedScene" uid="uid://bc3ivisapki7c" path="res://Scenes/Player/Player.tscn" id="9_tq0dg"]
 [ext_resource type="PackedScene" uid="uid://cnotmxptsn056" path="res://Scenes/SaucerManager/SaucerManager.tscn" id="9_txubq"]
-[ext_resource type="PackedScene" uid="uid://cgbx1e3l6cmbi" path="res://Scenes/HomingMissile/HomingMissile.tscn" id="10_sddur"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_q2oye")
@@ -35,8 +34,3 @@ autoplay = true
 position = Vector2(279, 404)
 
 [node name="SaucerManager" parent="." instance=ExtResource("9_txubq")]
-
-[node name="HomingMissile" parent="." instance=ExtResource("10_sddur")]
-position = Vector2(560, 205)
-_rotationSpeed = 1.2
-_speed = 40.0
